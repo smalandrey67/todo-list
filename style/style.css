@@ -1,0 +1,118 @@
+/* ======== global ======== */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+body{
+    font-size: 16px;
+    font-family: 'Courier New', Courier, monospace;
+    height: 100vh;
+    overflow: auto;
+    background-color: var(--color-gable-green);
+    color: var(--color-iron);
+}
+.container{
+    max-width: 1030px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+.wrapper{
+    min-height: 100%;
+    display: flex; 
+    flex-direction: column;
+    overflow: hidden;
+}
+.main{
+    flex: 1 1 auto;
+}
+
+/* ======== root ======== */
+:root{
+    --color-black: #000;
+    --color-white: #fff;
+    --color-grey: #acacac;
+    --color-orange: orange;
+    --color-red: red;
+    --color-gable-green: #0f2027;
+    --color-te-papa-green: #203a43;
+    --color-timber-green: #1c2e36;
+    --color-san-juan: #2c5364;
+    --color-iron: #E4E5E6;
+}
+
+
+/* ======== header ======== */
+.header{
+    padding: 10px 0 40px 0;
+}
+.header__body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 20px;
+}
+
+/* ======== todo ======== */
+.todo__body{
+    max-width: 400px;
+    height: 400px;
+    margin: 0 auto;
+    border: 1px solid #000;
+}
+.todo__form{
+    width: 100%;
+    height: 100%;
+}
+/* ======== form ======== */
+.form{
+    padding: 15px;
+    overflow: auto;
+}
+.form__add{
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.form__input{
+    flex: 0 1 70%;
+}
+.form__button{
+    flex: 0 1 30%;
+}
+
+/* ======== list ======== */
+.list__item{
+    display: flex;
+    background-color: var(--color-te-papa-green);
+}
+.list__task{
+    flex: 0 1 70%;
+}
+.list__functionality{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    flex: 0 1 30%;
+}
+/* ======== footer ======== */
+.footer{
+    padding: 10px 0;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
