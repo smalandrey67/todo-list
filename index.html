@@ -22,14 +22,26 @@
         <main class="main">
             <section class="todo__container container">
                 <div class="todo__body">
+                    <input class="todo__change" type="text">
+                    <button class="todo__confirm">change</button>
                     <form class="todo__form form">
+                        <div class="form__search">
+                            <input id="input-search" class="form__input input" type="">
+                        </div>
                         <div class="form__add">
-                            <input class="form__input input" type="text" placeholder="add your task">
-                            <button id="button-add" class="form__button button">add</button>
+                            <input id="input-add" class="form__input input" type="text" placeholder="add your task">
+                            <button id="button-add" class="form__button disable button">add</button>
                         </div>
 
-                        <ul class="form__list list">
-                        </ul>
+                        <div class="form__sorting">
+                            <button id="sorting-button" class="form__sorting-button" data-sorting="done">done</button>
+                            <button id="sorting-button" class="form__sorting-button" data-sorting="important">important</button>
+                            <button id="sorting-button" class="form__sorting-button" data-sorting="waite">waite</button>
+                            <button id="sorting-button" class="form__sorting-button" data-sorting="all">all</button>
+                        </div>
+
+                        <h4 class="list__warning"></h4>
+                        <ul class="form__list list"></ul>
                     </form>
                 </div>
             </section>
