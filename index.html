@@ -14,7 +14,12 @@
         <header class="header">
             <div class="header__container container">
                 <div class="header__body">
-                    <h1 class="header__title title">ToDo App</h1>
+                    <h1 class="header__title title">ToDo List</h1>
+                    <div class="header__side">
+                        <img class="header__side-image" src="images/document-icon.png" alt="document">
+                        <span class="header__side-count">0</span>
+                    </div>
+                   
                 </div>
             </div>
         </header>
@@ -22,37 +27,53 @@
         <main class="main">
             <section class="todo__container container">
                 <div class="todo__body">
-                    <input class="todo__change" type="text">
-                    <button class="todo__confirm">change</button>
                     <form class="todo__form form">
+                    
                         <div class="form__search">
-                            <input id="input-search" class="form__input input" type="">
-                        </div>
-                        <div class="form__add">
-                            <input id="input-add" class="form__input input" type="text" placeholder="add your task">
-                            <button id="button-add" class="form__button disable button">add</button>
+                            <input id="input-search" class="form__search-input input" type="text" placeholder="search">
                         </div>
 
                         <div class="form__sorting">
-                            <button id="sorting-button" class="form__sorting-button" data-sorting="done">done</button>
-                            <button id="sorting-button" class="form__sorting-button" data-sorting="important">important</button>
-                            <button id="sorting-button" class="form__sorting-button" data-sorting="waite">waite</button>
-                            <button id="sorting-button" class="form__sorting-button" data-sorting="all">all</button>
+                            <button id="sorting-button" class="form__sorting-button button" data-sorting="DONE_TYPE">done</button>
+                            <button id="sorting-button" class="form__sorting-button button" data-sorting="IMPORTANT_TYPE">important</button>
+                            <button id="sorting-button" class="form__sorting-button button" data-sorting="NOT_DONE_TYPE">not done</button>
+                            <button id="sorting-button" class="form__sorting-button button" data-sorting="ALL_TYPE">all</button>
                         </div>
 
                         <h4 class="list__warning"></h4>
                         <ul class="form__list list"></ul>
+
+                        <div class="form__add">
+                            <input id="input-add" class="form__input input" type="text" placeholder="add task">
+                            <button id="button-add" class="form__button form__button--disable button">add</button>
+                        </div>
+                        
                     </form>
                 </div>
             </section>
 
 
-            <section>
-                <ul class="delete">
+            <aside class="backet">
+                <div class="backet__body">
 
-                </ul>
-                <button id="reset">delete all tasks</button>
-            </section>
+                    <div class="backet__header">
+                        <h2 class="backet__title title">Deleted tasks</h2>
+                    </div>
+                    
+                    <div class="backet__main">
+                        <h4 class="backet__warning">No deleted task</h4>
+                        <ul class="backet__list">
+
+                        </ul>
+                    </div>
+                    
+
+                    <div class="backet__footer">
+                        <button id="reset" class="backet__reset button">delete all tasks</button>
+                    </div>
+                
+                </div>
+            </aside>
         </main>
     
         <footer class="footer">
@@ -60,8 +81,30 @@
                 <small class="footer__subtitle">&copy; Copyright 2022, Example Corporation</small>
             </div>
         </footer>
+
+
+
+        <div id="modal" class="modal">
+            <div class="modal__body">
+                <form class="modal__content">
+                    <div class="modal__header">
+                        <h3 class="modal__header-title">Change name of task:</h3>
+                        <img id="close" class="modal__header-close" src="images/close-icon.png" alt="close">
+                    </div>
+                    <div class="modal__main">
+                        <input class="modal__main-input input" type="text" placeholder="...">
+                    </div>
+                    <div class="modal__footer">
+                        <button id="confirm" class="modal__footer-confirm button">confirm</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 
+
+
+    
     <script src="script/script.js"></script>
 </body>
 </html>
