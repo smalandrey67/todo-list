@@ -14,41 +14,42 @@
         <header class="header">
             <div class="header__container container">
                 <div class="header__body">
-                    <h1 class="header__title title">ToDo List</h1>
                     <div class="header__side">
                         <img class="header__side-image" src="images/document-icon.png" alt="document">
                         <span class="header__side-count">0</span>
                     </div>
-                   
                 </div>
+                <h1 class="header__title title">ToDo List</h1>
             </div>
         </header>
     
         <main class="main">
             <section class="todo__container container">
                 <div class="todo__body">
-                    <form class="todo__form form">
+                    <div class="todo__content content">
                     
-                        <div class="form__search">
-                            <input id="input-search" class="form__search-input input" type="text" placeholder="search">
+                        <div class="content__search">
+                            <input id="input-search" class="content__search-input input" type="text" placeholder="search task...">
                         </div>
 
-                        <div class="form__sorting">
-                            <button id="sorting-button" class="form__sorting-button button" data-sorting="DONE_TYPE">done</button>
-                            <button id="sorting-button" class="form__sorting-button button" data-sorting="IMPORTANT_TYPE">important</button>
-                            <button id="sorting-button" class="form__sorting-button button" data-sorting="NOT_DONE_TYPE">not done</button>
-                            <button id="sorting-button" class="form__sorting-button button" data-sorting="ALL_TYPE">all</button>
+                        <div class="content__sorting">
+                            <button id="sorting-button" class="content__sorting-button button" data-sorting="DONE_TYPE">done</button>
+                            <button id="sorting-button" class="content__sorting-button button" data-sorting="IMPORTANT_TYPE">important</button>
+                            <button id="sorting-button" class="content__sorting-button button" data-sorting="WAITING_TYPE">waiting</button>
+                            <button id="sorting-button" class="content__sorting-button button" data-sorting="ALL_TYPE">all</button>
                         </div>
 
-                        <h4 class="list__warning"></h4>
-                        <ul class="form__list list"></ul>
+                        <h4 class="content__warning"></h4>
+                        <ul class="content__list list"></ul>
+                   
+                        
 
-                        <div class="form__add">
+                        <form class="tofo__form form">
                             <input id="input-add" class="form__input input" type="text" placeholder="add task">
                             <button id="button-add" class="form__button form__button--disable button">add</button>
-                        </div>
+                        </form>
                         
-                    </form>
+                    </div>
                 </div>
             </section>
 
@@ -57,7 +58,8 @@
                 <div class="backet__body">
 
                     <div class="backet__header">
-                        <h2 class="backet__title title">Deleted tasks</h2>
+                        <h2 class="backet__title title">Deleted tasks:</h2>
+                        <img id="backet-close" class="backet__close" src="images/close-icon.png" alt="close">
                     </div>
                     
                     <div class="backet__main">
@@ -91,11 +93,13 @@
                         <h3 class="modal__header-title">Change name of task:</h3>
                         <img id="close" class="modal__header-close" src="images/close-icon.png" alt="close">
                     </div>
-                    <div class="modal__main">
-                        <input class="modal__main-input input" type="text" placeholder="...">
-                    </div>
-                    <div class="modal__footer">
-                        <button id="confirm" class="modal__footer-confirm button">confirm</button>
+                    <div class="modal__change">
+                        <div class="modal__main">
+                            <input id="input-confirm" class="modal__main-input input" type="text" placeholder=":">
+                        </div>
+                        <div class="modal__footer">
+                            <button id="button-confirm" class="modal__footer-confirm button">confirm</button>
+                        </div>
                     </div>
                 </form>
             </div>

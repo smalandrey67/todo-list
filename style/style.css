@@ -66,11 +66,28 @@ body{
     font-size: 27px;
 }
 
+*{
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-grey);
+}
+*::-webkit-scrollbar{
+    width: 4px;
+}
+*::-webkit-scrollbar-track{
+    background: transparent;
+}
+*::-webkit-scrollbar-thumb{
+    background-color: var(--color-grey);
+    border-radius: 20px;
+    border: transparent;
+}
+
+
 /* ======== root ======== */
 :root{
     --color-black: #000;
     --color-white: #fff;
-    --color-grey: #acacac;
+    --color-grey: #807e7e;
     --color-orange: orange;
     --color-red: red;
     --color-gable-green: #0f2027;
@@ -83,13 +100,14 @@ body{
 
 /* ======== header ======== */
 .header{
-    padding: 10px 0 40px 0;
+    padding: 10px 0 15px 0;
+    transition: all 0.7s ease;
 }
 
 .header__body{
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: flex-start;
 }
 .header__side{
     position: relative;
@@ -115,6 +133,9 @@ body{
 .header__side-image:hover{
     transform: scale(0.90);
 }
+.header__title{
+    text-align: center;
+}
 
 
 /* ======== todo ======== */
@@ -122,12 +143,10 @@ body{
     max-width: 450px;
     height: 400px;
     margin: 0 auto;
-    transition: all 0.7s ease;
 }
-.todo__body--active{
-    transform: translate(-40%);
-}
-.todo__form{
+
+.todo__content{
+    padding: 15px;
     width: 100%;
     height: 100%;
 }
@@ -139,55 +158,61 @@ body{
     opacity: 1;
     visibility: visible;
 }
+
 /* ======== form ======== */
 .form{
-    padding: 15px;
-    overflow: auto;
-}
-.form__add{
-    position: sticky;
-    top: 0;
-    left: 0;
-    width: 100%;
     display: flex;
-    align-items: center;
-    margin-bottom: 10px;
 }
 .form__input{
     flex: 0 1 70%;
     margin-right: 10px;
 }
-.form__search{
+.form__button{
+    flex: 0 1 30%;
+}
+.disable{
+    pointer-events: none;
+    background-color: #163b4b;
+}
+
+/* ======== content ======== */
+
+.content__search{
     margin-bottom: 5px;
     width: 100%;
 }
-.form__search-input{
+.content__search-input{
     width: 100%;
 }
-.form__sorting{
+.content__sorting{
     display: flex;
     align-items: center;
     margin-bottom: 5px;
 }
-.form__sorting-button{
+.content__list{
+    max-height: 300px;
+    overflow: auto;
+}
+.content__sorting-button{
     padding: 0 10px;
     height: 23px;
     flex: 0 1 25%;
 }
-.form__sorting-button__active{
+.content__sorting-button__active{
     background-color: #163b4b;
 }
 
-.form__sorting-button:not(:last-child){
+.content__sorting-button:not(:last-child){
     margin-right: 10px;
 }
 
-.form__button{
-    flex: 0 1 30%;
+.content__warning{
+    text-align: center;
+    padding: 20px 0;
+    display: none;
 }
-.form__button--disable{
-    pointer-events: none;
-    background-color: #163b4b;
+.content__warning--active{
+    display: block;
 }
 
 /* ======== list ======== */
@@ -213,7 +238,13 @@ body{
 
 .list__task{
     flex: 0 1 70%;
+    transition: all 0.5s ease;
+    cursor: pointer;
 }
+.list__task:hover{
+    opacity: 0.4;
+}
+
 .list__task::first-letter{
     text-transform: uppercase;
 }
@@ -246,21 +277,12 @@ body{
     transform: scale(0.90);
 }
 
-.list__warning{
-    text-align: center;
-    padding: 20px 0;
-    display: none;
-}
-.list__warning--active{
-    display: block;
-}
-
 /* ======== backet ======== */
 .backet{
     position: fixed;
     top: 0;
     right: 0;
-    width: 20%;
+    width: 25%;
     height: 100%;
     opacity: 0;
     visibility: hidden;
@@ -280,10 +302,18 @@ body{
     overflow: hidden;
     background-color: var(--color-te-papa-green);
 }
-.backet__title{
-    text-align: center;
+.backet__header{
     margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
+.backet__close{
+    height: 15px;
+    width: 15px;
+    cursor: pointer;
+}
+
 .backet__main{
     flex: 1 1 auto;
 }
@@ -310,6 +340,12 @@ body{
 .backet__task{
     flex: 0 1 80%;
     margin-right: 5px;
+}
+.backet__list{
+    overflow: auto;
+    max-height: 800px;
+    margin-bottom: 5px;
+    padding-right: 5px;
 }
 .backet__functionality{
     flex: 0 1 20%;
@@ -403,6 +439,22 @@ body{
 }
 .modal__confirm:not(:last-child){
     margin-right: 15px;
+}
+
+
+@media(max-width: 1100px){
+    .backet{
+        width: 100%;
+    }
+    .todo__body--active{
+        transform: translateX(0);
+    }
+}
+
+@media(max-width: 768px){
+    .backet__list{
+        max-height: 540px;
+    }
 }
 
 
