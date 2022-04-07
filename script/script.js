@@ -1,4 +1,4 @@
-'use strict'
+ 'use strict'
 
 //main veribles
 const form = document.querySelector('.form')
